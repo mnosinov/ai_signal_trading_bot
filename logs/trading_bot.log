@@ -146,3 +146,10 @@
 2025-06-18 20:22:58 - signals - INFO - Generated signal: {'long_probability': 60, 'long_take_profit': 148.5, 'long_stop_loss': 147.6, 'short_probability': 40, 'short_take_profit': 145.4, 'short_stop_loss': 146.3}
 2025-06-18 20:22:58 - main - INFO - Signal received: {'signal': {'long_probability': 60, 'long_take_profit': 148.5, 'long_stop_loss': 147.6, 'short_probability': 40, 'short_take_profit': 145.4, 'short_stop_loss': 146.3}}
 2025-06-18 20:22:58 - main - INFO - Bot stopped
+2025-06-18 20:32:36 - main - INFO - Services initialized successfully
+2025-06-18 20:32:36 - main - INFO - Starting trading bot...
+2025-06-18 20:32:38 - binance_client - INFO - Binance connection established
+2025-06-18 20:32:39 - binance_client - INFO - Binance connection closed
+2025-06-18 20:32:41 - signals - INFO - Generated signal: {'long_probability': 60, 'long_take_profit': 148.75, 'long_stop_loss': 147.65, 'short_probability': 40, 'short_take_profit': 146.85, 'short_stop_loss': 147.95}
+2025-06-18 20:32:41 - main - INFO - Signal received: {'signal': {'long_probability': 60, 'long_take_profit': 148.75, 'long_stop_loss': 147.65, 'short_probability': 40, 'short_take_profit': 146.85, 'short_stop_loss': 147.95}}
+2025-06-18 20:32:41 - main - INFO - Bot stopped
