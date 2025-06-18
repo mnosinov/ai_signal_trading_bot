@@ -80,7 +80,8 @@ class TradingBot:
 
             while self.running:
                 await self.process_trading_cycle()
-                await asyncio.sleep(10)  # Пауза между циклами
+                break   # только для DEBUG целей
+                await asyncio.sleep(60)  # Пауза между циклами
         except KeyboardInterrupt:
             logger.info("Shutting down gracefully...")
         finally:

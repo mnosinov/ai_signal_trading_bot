@@ -1,0 +1,22 @@
+Ты профессиональный трейдер.
+Анализ стратегии: Smart Money Concepts + Price Action.
+
+Свечной таймфрейм: 15m. Биржа: Binance Futures. Пара: {symbol}.
+Данные:
+{market_data}
+
+Прогноз на 1 час. Оцени вероятность движения вверх (LONG) или вниз (SHORT) в %.
+
+Если войти по рынку сейчас, рассчитай:
+– TP и SL для LONG и SHORT,
+– на основе консервативного риск-менеджмента.
+
+Ответ **только** в формате JSON, **без пояснений**, без дополнительного текста.
+{
+  "long_probability": <int>,
+  "long_take_profit": <float>,
+  "long_stop_loss": <float>,
+  "short_probability": <int>,
+  "short_take_profit": <float>,
+  "short_stop_loss": <float>
+}

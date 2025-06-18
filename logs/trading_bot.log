@@ -75,3 +75,74 @@
 2025-06-18 16:37:49 - signals - ERROR - Invalid OpenAI response: 
 2025-06-18 16:37:49 - main - INFO - Signal received: {'signal': 'NONE'}
 2025-06-18 16:37:56 - main - INFO - Bot stopped
+2025-06-18 19:25:23 - main - INFO - Services initialized successfully
+2025-06-18 19:25:23 - main - INFO - Starting trading bot...
+2025-06-18 19:25:24 - binance_client - INFO - Binance connection established
+2025-06-18 19:25:25 - binance_client - INFO - Binance connection closed
+2025-06-18 19:25:25 - main - ERROR - Trading cycle error: 'SignalGenerator' object has no attribute 'optimize_market_data_json'
+2025-06-18 19:25:36 - binance_client - INFO - Binance connection established
+2025-06-18 19:25:37 - binance_client - INFO - Binance connection closed
+2025-06-18 19:25:37 - main - ERROR - Trading cycle error: 'SignalGenerator' object has no attribute 'optimize_market_data_json'
+2025-06-18 19:25:40 - main - INFO - Bot stopped
+2025-06-18 19:26:06 - main - INFO - Services initialized successfully
+2025-06-18 19:26:06 - main - INFO - Starting trading bot...
+2025-06-18 19:26:07 - binance_client - INFO - Binance connection established
+2025-06-18 19:26:09 - binance_client - INFO - Binance connection closed
+2025-06-18 19:26:09 - main - ERROR - Trading cycle error: 'hight'
+2025-06-18 19:26:20 - binance_client - INFO - Binance connection established
+2025-06-18 19:26:21 - binance_client - INFO - Binance connection closed
+2025-06-18 19:26:21 - main - ERROR - Trading cycle error: 'hight'
+2025-06-18 19:26:24 - main - INFO - Bot stopped
+2025-06-18 19:26:27 - main - INFO - Services initialized successfully
+2025-06-18 19:26:27 - main - INFO - Starting trading bot...
+2025-06-18 19:26:28 - binance_client - INFO - Binance connection established
+2025-06-18 19:26:29 - binance_client - INFO - Binance connection closed
+2025-06-18 19:26:29 - main - ERROR - Trading cycle error: [Errno 2] No such file or directory: '/home/mirbek/pydev/myprojects/ai_signal_trading_bot/bot/openai/prompts/one_symbol_prompt.txt'
+2025-06-18 19:26:40 - main - INFO - Bot stopped
+2025-06-18 19:27:38 - main - INFO - Services initialized successfully
+2025-06-18 19:27:38 - main - INFO - Starting trading bot...
+2025-06-18 19:27:40 - binance_client - INFO - Binance connection established
+2025-06-18 19:27:41 - binance_client - INFO - Binance connection closed
+2025-06-18 19:27:44 - signals - INFO - Generated signal: {'long_probability': 60, 'long_take_profit': 148.5, 'long_stop_loss': 147.2, 'short_probability': 40, 'short_take_profit': 145.5, 'short_stop_loss': 146.8}
+2025-06-18 19:27:44 - main - INFO - Signal received: {'signal': {'long_probability': 60, 'long_take_profit': 148.5, 'long_stop_loss': 147.2, 'short_probability': 40, 'short_take_profit': 145.5, 'short_stop_loss': 146.8}}
+2025-06-18 19:27:55 - binance_client - INFO - Binance connection established
+2025-06-18 19:27:56 - binance_client - INFO - Binance connection closed
+2025-06-18 19:27:57 - signals - ERROR - Invalid OpenAI response: Expecting value: line 1 column 1 (char 0)
+2025-06-18 19:27:57 - main - INFO - Signal received: {'signal': None}
+2025-06-18 19:28:08 - binance_client - INFO - Binance connection established
+2025-06-18 19:28:09 - binance_client - INFO - Binance connection closed
+2025-06-18 19:28:10 - signals - ERROR - Invalid OpenAI response: Expecting value: line 1 column 1 (char 0)
+2025-06-18 19:28:10 - main - INFO - Signal received: {'signal': None}
+2025-06-18 19:28:17 - main - INFO - Bot stopped
+2025-06-18 20:08:37 - main - INFO - Services initialized successfully
+2025-06-18 20:08:37 - main - INFO - Starting trading bot...
+2025-06-18 20:08:38 - binance_client - INFO - Binance connection established
+2025-06-18 20:08:39 - binance_client - INFO - Binance connection closed
+2025-06-18 20:12:56 - main - INFO - Shutting down gracefully...
+2025-06-18 20:12:56 - main - INFO - Bot stopped
+2025-06-18 20:12:59 - main - INFO - Services initialized successfully
+2025-06-18 20:12:59 - main - INFO - Starting trading bot...
+2025-06-18 20:13:00 - binance_client - INFO - Binance connection established
+2025-06-18 20:13:01 - binance_client - INFO - Binance connection closed
+2025-06-18 20:19:47 - main - INFO - Shutting down gracefully...
+2025-06-18 20:19:47 - main - INFO - Bot stopped
+2025-06-18 20:19:50 - main - INFO - Services initialized successfully
+2025-06-18 20:19:50 - main - INFO - Starting trading bot...
+2025-06-18 20:19:51 - binance_client - INFO - Binance connection established
+2025-06-18 20:19:52 - binance_client - INFO - Binance connection closed
+2025-06-18 20:19:55 - signals - ERROR - OpenAI error: 'ChatCompletion' object is not subscriptable
+2025-06-18 20:19:55 - main - INFO - Signal received: {'signal': None}
+2025-06-18 20:19:55 - main - INFO - Bot stopped
+2025-06-18 20:20:39 - main - INFO - Services initialized successfully
+2025-06-18 20:20:39 - main - INFO - Starting trading bot...
+2025-06-18 20:20:40 - binance_client - INFO - Binance connection established
+2025-06-18 20:20:40 - binance_client - INFO - Binance connection closed
+2025-06-18 20:22:31 - main - INFO - Shutting down gracefully...
+2025-06-18 20:22:31 - main - INFO - Bot stopped
+2025-06-18 20:22:49 - main - INFO - Services initialized successfully
+2025-06-18 20:22:49 - main - INFO - Starting trading bot...
+2025-06-18 20:22:50 - binance_client - INFO - Binance connection established
+2025-06-18 20:22:56 - binance_client - INFO - Binance connection closed
+2025-06-18 20:22:58 - signals - INFO - Generated signal: {'long_probability': 60, 'long_take_profit': 148.5, 'long_stop_loss': 147.6, 'short_probability': 40, 'short_take_profit': 145.4, 'short_stop_loss': 146.3}
+2025-06-18 20:22:58 - main - INFO - Signal received: {'signal': {'long_probability': 60, 'long_take_profit': 148.5, 'long_stop_loss': 147.6, 'short_probability': 40, 'short_take_profit': 145.4, 'short_stop_loss': 146.3}}
+2025-06-18 20:22:58 - main - INFO - Bot stopped
