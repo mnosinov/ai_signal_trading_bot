@@ -6,7 +6,7 @@ from bot.utils.logger import setup_logger
 logger = setup_logger("binance_client")
 
 
-class BinanceClient:
+class BinanceDataService:
     def __init__(self, api_key: str, api_secret: str):
         self.api_key = api_key
         self.api_secret = api_secret
@@ -37,31 +37,27 @@ class BinanceClient:
     async def get_klines(self, symbol: str, interval: str, limit: int = 100) -> List[Dict]:
         """
         Получение исторических данных
-        :param symbol: Торговая пара (BTCUSDT)
+        :param symbol: Торговая пара (например BTCUSDT)
         :param interval: Интервал (1m, 5m, 15m и т.д.)
         :param limit: Количество свечей
         :return: Список словарей с данными свечей
         """
-        print(1)
-        print(self.client)
         if not self.client:
-            print(11111)
             raise RuntimeError("Client not connected")
 
         try:
-            print(2)
+            # получаем klines для Binance Futures
             data = await self.client.futures_klines(
                 symbol=symbol,
                 interval=interval,
                 limit=limit
             )
-            print(3)
             return self._format_klines(data)
         except Exception as e:
             logger.error(f"Klines error for {symbol}: {e}")
             raise
 
-    def _format_klines(self, data: List) -> List[Dict]:
+    def _format_klines(self, data: List) -> List[Dict]: # noqa
         """Форматирование сырых данных Binance"""
         return [{
             'time': item[0],
@@ -82,12 +78,12 @@ class BinanceClient:
             raise
 
     async def create_order(
-        self,
-        symbol: str,
-        side: str,
-        quantity: float,
-        order_type: str = "MARKET",
-        **kwargs
+            self,
+            symbol: str,
+            side: str,
+            quantity: float,
+            order_type: str = "MARKET",
+            **kwargs
     ) -> Dict:
         """
         Создание ордера
@@ -125,9 +121,9 @@ class BinanceClient:
     async def __aenter__(self):
         """
         Пример использования в виде контекстного менеджера
-        async with BinanceClient(Config.BINANCE_API_KEY, Config.BINANCE_API_SECRET) as client:
-            klines = await client.get_klines("DOTUSDT", "15m")
-            await client.create_order("DOTUSDT", "BUY", 0.001)
+        async with BinanceDataService(Config.BINANCE_API_KEY, Config.BINANCE_API_SECRET) as openai_client:
+            klines = await openai_client.get_klines("DOTUSDT", "15m")
+            await openai_client.create_order("DOTUSDT", "BUY", 0.001)
         """
         await self.connect()
         return self

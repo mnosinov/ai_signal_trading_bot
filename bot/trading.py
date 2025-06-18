@@ -26,6 +26,7 @@ class TradingEngine:
 
             # Здесь логика исполнения ордера через Binance API
             # ...
+            
             print("implement the logic of binance api order")
 
         finally:

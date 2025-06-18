@@ -1,12 +1,12 @@
 import pytest
 from unittest.mock import AsyncMock, MagicMock
-from bot.binance.client import BinanceClient
+from bot.binance.client import BinanceDataService
 from bot.openai.signals import SignalGenerator
 
 
 @pytest.fixture
 def mock_binance():
-    mock = AsyncMock(spec=BinanceClient)
+    mock = AsyncMock(spec=BinanceDataService)
     mock.get_klines.return_value = []
     return mock
 

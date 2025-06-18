@@ -1,5 +1,5 @@
 import asyncio
-from bot.binance.client import BinanceClient
+from bot.binance.client import BinanceDataService
 from bot.openai.signals import SignalGenerator
 from bot.config.config import Config
 from bot.utils.logger import setup_logger
@@ -16,15 +16,11 @@ class TradingBot:
     async def initialize(self):
         """Инициализация сервисов"""
         try:
-            print(10)
-            self.binance_client = BinanceClient(
+            self.binance_client = BinanceDataService(
                 api_key=Config.BINANCE_API_KEY,
                 api_secret=Config.BINANCE_API_SECRET
             )
-            print(self.binance_client)
-            print(11)
             self.signal_generator = SignalGenerator()
-            print(12)
             logger.info("Services initialized successfully")
         except Exception as e:
             logger.error(f"Initialization failed: {e}")
@@ -33,16 +29,13 @@ class TradingBot:
     async def fetch_market_data(self, symbol: str, interval: str) -> list:
         """Получение данных с Binance"""
         try:
-            print(30)
-            print(self.binance_client)
-            async with BinanceClient(Config.BINANCE_API_KEY, Config.BINANCE_API_SECRET) as binance_client:
-                # await client.create_order("DOTUSDT", "BUY", 0.001)
-                data = await binance_client.get_klines(
+            async with BinanceDataService(Config.BINANCE_API_KEY, Config.BINANCE_API_SECRET) as binance_data_service:
+                # await openai_client.create_order("DOTUSDT", "BUY", 0.001)
+                data = await binance_data_service.get_klines(
                     symbol=symbol,
                     interval=interval,
                     limit=100
                 )
-            print(31)
             logger.debug(f"Received {len(data)} klines for {symbol}")
             return data[-50:]  # Берем последние 50 свечей
         except Exception as e:
@@ -51,16 +44,15 @@ class TradingBot:
 
     async def process_trading_cycle(self):
         """Один цикл анализа и торговли"""
+        symbol = "SOLUSDT"
         try:
             # 1. Получаем данные
-            print(200)
-            market_data = await self.fetch_market_data("DOTUSDT", "15m")
-            print(201)
+            market_data = await self.fetch_market_data(symbol, "15m")
             if not market_data:
                 return
 
             # 2. Генерируем сигнал
-            signal = await self.signal_generator.generate_signal(market_data)
+            signal = await self.signal_generator.forecast_probability(symbol, market_data)
             logger.info(f"Signal received: {signal}")
 
             # 3. Исполняем сделку (заглушка)
@@ -70,10 +62,10 @@ class TradingBot:
         except Exception as e:
             logger.error(f"Trading cycle error: {e}")
 
-    def execute_trade(self, signal: dict):
+    def execute_trade(self, signal: dict):  # noqa
         """Заглушка для торговой логики"""
         logger.info(
-            f"EXECUTE {signal['signal']} | "
+            f"Заглушка: EXECUTE {signal['signal']} | "
             f"Price: {signal.get('price')} | "
             f"TP: {signal.get('tp')} | "
             f"SL: {signal.get('sl')}"
@@ -103,8 +95,8 @@ class TradingBot:
 
     async def check_services(self):
         return {
-            "binance_client": await self.binance_client.client.ping(),
-            "openai": bool(self.signal_generator.client)
+            "binance_client": await self.binance_client.openai_client.ping(),
+            "openai": bool(self.signal_generator.openai_client)
         }
 
 
